@@ -70,7 +70,7 @@ Compared multiple classifiers using **stratified cross-validation**:
 - Annotated notebook created for clear walkthrough of methodology
 
 ### 6. Evaluation Metric
-Used **Precision-Recall AUC (PR-AUC)** — the correct metric for imbalanced fraud detection where missing fraud is far more costly than a false alarm.
+Used **Precision-Recall AUC (PR-AUC)** — the correct metric for imbalanced fraud detection, where missing fraud is far more costly than a false alarm.
 
 ---
 
@@ -92,11 +92,11 @@ Used **Precision-Recall AUC (PR-AUC)** — the correct metric for imbalanced fra
 ```
 Capstone2/
 │
-├── preprocessing_v1.ipynb                        # Initial data preprocessing
-├── prepro_v2_wo_amnt_cap.ipynb                   # Preprocessing v2 — no amount cap
 ├── Data_wrangle_credit_fraud.ipynb               # Data wrangling and cleaning
 ├── Credit_card_EDA_final_version_last.ipynb      # Final EDA notebook
 ├── Credit_card_EDA_final_version_last_annotated.ipynb  # Annotated EDA walkthrough
+├── preprocessing_v1.ipynb                        # Initial data preprocessing
+├── prepro_v2_wo_amnt_cap.ipynb                   # Preprocessing v2 — no amount cap
 ├── V1_final_model_mentor_reviewe.ipynb           # Final model with mentor review
 ├── Final Credit card fraud detection report.pdf  # Full project report
 ├── Final credit card fraud detection.pptx        # Presentation slides
@@ -128,8 +128,8 @@ cd Capstone2
 # Install dependencies
 pip install pandas numpy scikit-learn xgboost matplotlib seaborn jupyter
 
-# Start with preprocessing
-jupyter notebook preprocessing_v1.ipynb
+# Start with Data Wrangle
+Data_wrangle_credit_fraud.ipynb
 
 # Then run EDA
 jupyter notebook Credit_card_EDA_final_version_last.ipynb
@@ -144,9 +144,8 @@ jupyter notebook V1_final_model_mentor_reviewe.ipynb
 
 - Standard accuracy is a **misleading metric** for imbalanced datasets
 - **Stratified sampling** is critical to preserve minority class distribution
-- Removing the **amount cap** in preprocessing improved model performance
 - **Feature engineering** contributed more to model performance than hyperparameter tuning
-- **PR-AUC** is the right evaluation metric when false negatives are costly
+- **PR-AUC** and  **Recal** is the right evaluation metric when false negatives are costly
 - XGBoost outperformed Random Forest on this dataset
 
 ---
