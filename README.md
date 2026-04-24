@@ -53,11 +53,37 @@ Financial institutions lose billions annually to fraud. The challenge is not jus
 - **Removed** unnecessary columns (Unnamed: 0, high-cardinality identifiers)
 - **Output:** Clean dataset saved as CSV for analysis
 
+<<<<<<< HEAD
 **Key Findings:**
 - No missing data or duplicates
 - Transaction amounts are **right-skewed** (log transformation needed)
 - Age distribution roughly normal with mean ~44 years
 - Fraud transactions are rare and scattered across all categories
+=======
+| Category | Examples |
+|----------|---------|
+| Behavioral | Transaction frequency, average spend deviation, velocity |
+| Temporal | Hour of day, day of week, time since last transaction |
+| Geospatial | Distance from home location, cross-border flag |
+
+### 3. Exploratory Data Analysis
+- Analyzed fraud vs non-fraud transaction distributions
+- Identified key behavioral patterns in fraudulent transactions
+- Visualized class imbalance and feature correlations
+
+### 4. Model Development
+Compared multiple classifiers using **stratified cross-validation**:
+- Logistic Regression (baseline)
+- Random Forest
+- **XGBoost** (selected as final model)
+
+### 5. Model Review & Iteration
+- Mentor review incorporated into final model version
+- Annotated notebook created for clear walkthrough of methodology
+
+### 6. Evaluation Metric
+Used **Precision-Recall AUC (PR-AUC)** — the correct metric for imbalanced fraud detection, where missing fraud is far more costly than a false alarm.
+>>>>>>> 1106fdc7462ed54f4395cf7c57043a0feec10737
 
 ---
 
@@ -96,7 +122,23 @@ Financial institutions lose billions annually to fraud. The challenge is not jus
 
 ### **3. Feature Engineering & Preprocessing** (`V1_final_model_mentor_reviewe.ipynb`)
 
+<<<<<<< HEAD
 **Advanced Features Created:**
+=======
+```
+Capstone2/
+│
+├── Data_wrangle_credit_fraud.ipynb               # Data wrangling and cleaning
+├── Credit_card_EDA_final_version_last.ipynb      # Final EDA notebook
+├── Credit_card_EDA_final_version_last_annotated.ipynb  # Annotated EDA walkthrough
+├── preprocessing_v1.ipynb                        # Initial data preprocessing
+├── prepro_v2_wo_amnt_cap.ipynb                   # Preprocessing v2 — no amount cap
+├── V1_final_model_mentor_reviewe.ipynb           # Final model with mentor review
+├── Final Credit card fraud detection report.pdf  # Full project report
+├── Final credit card fraud detection.pptx        # Presentation slides
+└── README.md
+```
+>>>>>>> 1106fdc7462ed54f4395cf7c57043a0feec10737
 
 | Feature | Description | Business Logic |
 |---------|-------------|-----------------|
@@ -118,4 +160,58 @@ Financial institutions lose billions annually to fraud. The challenge is not jus
   - `amt_log`: 0.114
   - `is_night`: 0.089
 
+<<<<<<< HEAD
 **Final Features (13 features):**
+=======
+| Tool | Purpose |
+|------|---------|
+| Python | Core language |
+| Pandas / NumPy | Data manipulation and preprocessing |
+| Scikit-learn | Preprocessing, cross-validation, baseline models |
+| XGBoost | Final classification model |
+| Matplotlib / Seaborn | EDA and evaluation plots |
+| Jupyter Notebook | Development environment |
+
+---
+
+## 🚀 How to Run
+
+```bash
+# Clone the repository
+git clone https://github.com/patidarpuja/Capstone2.git
+cd Capstone2
+
+# Install dependencies
+pip install pandas numpy scikit-learn xgboost matplotlib seaborn jupyter
+
+# Start with Data Wrangle
+Data_wrangle_credit_fraud.ipynb
+
+# Then run EDA
+jupyter notebook Credit_card_EDA_final_version_last.ipynb
+
+# Then run the final model
+jupyter notebook V1_final_model_mentor_reviewe.ipynb
+```
+
+---
+
+## 💡 Key Learnings
+
+- Standard accuracy is a **misleading metric** for imbalanced datasets
+- **Stratified sampling** is critical to preserve minority class distribution
+- **Feature engineering** contributed more to model performance than hyperparameter tuning
+- **PR-AUC** and  **Recal** is the right evaluation metric when false negatives are costly
+- XGBoost outperformed Random Forest on this dataset
+
+---
+
+## 👩‍💻 Author
+
+**Puja Patidar**
+Data Scientist | Data Analyst
+📍 Jersey City, NJ | H4 EAD — No Sponsorship Required
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/puja-patidar-960037212)
+[![GitHub](https://img.shields.io/badge/GitHub-patidarpuja-black?style=flat-square&logo=github)](https://github.com/patidarpuja)
+>>>>>>> 1106fdc7462ed54f4395cf7c57043a0feec10737
